@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-java-resources
+spec:
+  destination:
+    name: ''
+    namespace: pipeline-todo
+    server: https://kubernetes.default.svc
+  source:
+    path: pipeline/resources
+    repoURL: https://github.com/secangkirkopipanas/todo-java-infra/
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+      - CreateNamespace=true
