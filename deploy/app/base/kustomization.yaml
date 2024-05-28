@@ -5,3 +5,4 @@ resources:
 - svc-todo.yaml
 - rt-todo.yaml
 - svc-monitor-todo.yaml
+- secret.yaml

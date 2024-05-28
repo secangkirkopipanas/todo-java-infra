@@ -8,7 +8,7 @@ patches:
   - path: secret.yaml
 
 configMapGenerator:
-  - name: todo-java-configmap
+  - name: cm-todo-java
     literals:
       - timezone="Asia/Singapore"
       - java_options="-Xms1G -Xms1G"
