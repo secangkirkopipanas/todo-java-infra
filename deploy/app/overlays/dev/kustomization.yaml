@@ -5,6 +5,7 @@ resources:
 
 patches:
   - path: dep-todo.yaml
+  - path: secret.yaml
 
 configMapGenerator:
   - name: todo-java-configmap
