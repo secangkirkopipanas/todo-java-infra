@@ -14,3 +14,4 @@ configMapGenerator:
       - spring_active_profiles="dev"
       - datasource_url="jdbc:h2:mem:todo"
       - datasource_driver_classname="org.hibernate.dialect.H2Dialect"
+      - theme="blue-theme"

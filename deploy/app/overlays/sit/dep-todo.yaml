@@ -8,5 +8,10 @@ spec:
     spec:
       containers:
         - name: todo-java-app
-          image: >-
-            quay.io/rh_rh/todo-java:1.0.0-beta3
+          image: quay.io/rh_rh/todo-java:1.0.0-beta3
+          env:
+            - name: THEME
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-todo-java
+                  key: theme

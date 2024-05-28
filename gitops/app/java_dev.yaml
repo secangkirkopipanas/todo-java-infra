@@ -1,23 +1,30 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: todo-java-prod-applicationset
+  name: todo-java-appset
 spec:
   generators:
   - list:
       elements:
-      - cluster: prod1
+      - env: dev
         url: https://kubernetes.default.svc
+        namespace: todo-dev
+      - env: sit
+        url: https://kubernetes.default.svc
+        namespace: todo-sit
+      - env: prod
+        url: https://kubernetes.default.svc
+        namespace: todo-prod
   template:
     metadata:
-      name: '{{cluster}}-todo-application'
+      name: 'todo-app-{{cluster}}'
     spec:
       destination:
         name: ''
-        namespace: prod
-        server: '{{url}}'
+        namespace: '{{namespace}}'
+        server: '{{env}}'
       source:
-        path: deploy/app-java/overlays/prod
+        path: deploy/app-java/overlays/dev
         repoURL: https://github.com/secangkirkopipanas/todo-java-infra/
         targetRevision: HEAD
       sources: []
@@ -25,6 +32,6 @@ spec:
       syncPolicy:
         automated:
           prune: true
-          selfHeal: false
+          selfHeal: true
         syncOptions:
           - CreateNamespace=true

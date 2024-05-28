@@ -21,11 +21,17 @@ spec:
   template:
     metadata:
       labels:
+        app: todo-java
         app.kubernetes.io/name: todo-java
         app.kubernetes.io/part-of: todo-java-app
     spec:
+      imagePullSecrets:
+        - name: quay
       containers:
-        - env:
+        - name: todo-java-app
+          image: quay.io/rh_rh/todo-java:tag_name
+          imagePullPolicy: IfNotPresent
+          env:
             - name: TZ
               valueFrom:
                 configMapKeyRef:
@@ -61,9 +67,11 @@ spec:
                 secretKeyRef:
                   key: database-password
                   name: todo-java-db-secret
-          image: quay.io/rh_rh/todo-java:tag_name
-          imagePullPolicy: IfNotPresent
-          name: todo-java-app
+            - name: THEME
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-todo-java
+                  key: theme
           ports:
             - containerPort: 8080
               name: http
@@ -77,29 +85,35 @@ spec:
               memory: 2048Mi
           livenessProbe:
             failureThreshold: 5
+            successThreshold: 1
+            initialDelaySeconds: 15
             httpGet:
-              host: ''
-              path: /management/info
+              path: /management/health/liveness
               port: 8080
               scheme: HTTP
           readinessProbe:
             failureThreshold: 5
             successThreshold: 1
+            initialDelaySeconds: 15
             httpGet:
-              host: ''
-              path: /management/info
+              path: /management/health/readiness
               port: 8080
               scheme: HTTP
           startupProbe:
             failureThreshold: 5
             successThreshold: 1
+            initialDelaySeconds: 15
             httpGet:
-              host: ''
-              path: /management/info
+              path: /management/health
               port: 8080
               scheme: HTTP
           securityContext:
+            allowPrivilegeEscalation: false
             runAsNonRoot: true
+            capabilities:
+              drop: [ "ALL" ]
+            seccompProfile:
+              type: RuntimeDefault
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
