@@ -13,5 +13,6 @@ configMapGenerator:
       - timezone="Asia/Singapore"
       - java_options="-Xms2G -Xms2G"
       - spring_active_profiles="sit"
-      - datasource_url="jdbc:h2:mem:todo"
-      - datasource_driver_classname="org.hibernate.dialect.H2Dialect"
+      - datasource_url="jdbc:postgresql://todo-java-db-svc:5432/todo-java-sit-db"
+      - datasource_driver_classname="org.postgresql.Driver"
+      - theme="green-theme"
