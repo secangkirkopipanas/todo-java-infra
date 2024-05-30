@@ -4,6 +4,7 @@ metadata:
   name: todo-java-db
   labels:
     app: todo-java-db
+    app.kubernetes.io/name: todo-java-db
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
