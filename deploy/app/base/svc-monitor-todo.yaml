@@ -11,6 +11,7 @@ spec:
     scheme: http
     path: /management/prometheus
   selector:
-    app: todo-java
+    matchLabels:
+      app: todo-java
   namespaceSelector:
     any: true
