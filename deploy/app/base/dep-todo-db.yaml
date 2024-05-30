@@ -42,13 +42,13 @@ spec:
             - name: POSTGRESQL_USERNAME
               valueFrom:
                 secretKeyRef:
-                  key: database-credentials
-                  name: username
+                  key: todo-java-db-secret
+                  name: database-user
             - name: POSTGRESQL_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  key: database-credentials
-                  name: password
+                  key: todo-java-db-secret
+                  name: database-password
             - name: POSTGRESQL_TIMEZONE
               value: Asia/Singapore
             - name: POSTGRESQL_LOG_TIMEZONE
