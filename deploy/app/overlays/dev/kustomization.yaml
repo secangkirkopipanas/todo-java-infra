@@ -17,3 +17,6 @@ configMapGenerator:
       - datasource_url="jdbc:h2:mem:todo"
       - datasource_driver_classname="org.h2.Driver"
       - theme="green-theme"
+  - name: cm-todo-java-db
+    literals:
+      - timezone="Asia/Singapore"
