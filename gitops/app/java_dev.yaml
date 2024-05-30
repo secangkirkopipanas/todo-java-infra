@@ -17,7 +17,7 @@ spec:
         namespace: todo-java-prod
   template:
     metadata:
-      name: 'todo-app-{{cluster}}'
+      name: 'todo-app-{{env}}'
     spec:
       destination:
         name: ''
