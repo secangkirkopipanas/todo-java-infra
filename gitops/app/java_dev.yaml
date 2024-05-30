@@ -8,13 +8,13 @@ spec:
       elements:
       - env: dev
         url: https://kubernetes.default.svc
-        namespace: todo-dev
+        namespace: todo-java-dev
       - env: sit
         url: https://kubernetes.default.svc
-        namespace: todo-sit
+        namespace: todo-java-sit
       - env: prod
         url: https://kubernetes.default.svc
-        namespace: todo-prod
+        namespace: todo-java-prod
   template:
     metadata:
       name: 'todo-app-{{cluster}}'
