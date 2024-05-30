@@ -1,7 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-db
+  name: todo-java-db
+  labels:
+    app: todo-java-db
 spec:
   replicas: 1
   template:
