@@ -25,7 +25,7 @@ spec:
         server: '{{url}}'
       source:
         path: 'deploy/app/overlays/{{env}}'
-        repoURL: https://github.com/secangkirkopipanas/todo-java-infra/
+        repoURL: https://github.com/secangkirkopipanas/todo-java-infra.git
         targetRevision: HEAD
       sources: []
       project: default
