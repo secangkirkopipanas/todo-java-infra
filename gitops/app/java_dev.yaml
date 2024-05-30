@@ -24,7 +24,7 @@ spec:
         namespace: '{{namespace}}'
         server: '{{env}}'
       source:
-        path: deploy/app-java/overlays/dev
+        path: 'deploy/app/overlays/{{env}}'
         repoURL: https://github.com/secangkirkopipanas/todo-java-infra/
         targetRevision: HEAD
       sources: []
