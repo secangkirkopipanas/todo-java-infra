@@ -1,11 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app.kubernetes.io/instance: todo-java-app
-    app.kubernetes.io/name: todo-java
-    app.openshift.io/runtime: spring
-  name: todo-java-app
+  name: todo-java-app-dep
 spec:
   progressDeadlineSeconds: 600
   replicas: 1

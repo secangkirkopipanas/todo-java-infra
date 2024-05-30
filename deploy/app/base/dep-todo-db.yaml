@@ -1,10 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-java-db
-  labels:
-    app: todo-java-db
-    app.kubernetes.io/name: todo-java-db
+  name: todo-java-db-dep
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
