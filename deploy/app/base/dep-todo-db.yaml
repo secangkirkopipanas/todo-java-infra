@@ -3,9 +3,6 @@ kind: Deployment
 metadata:
   labels:
     app: todo-java-db
-    app.kubernetes.io/instance: todo-java-db
-    app.kubernetes.io/name: todo-java-db
-    app.openshift.io/runtime: spring
   name: todo-java
 spec:
   progressDeadlineSeconds: 600
