@@ -1,9 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: todo-java-app
+  name: todo-java-app-dep
   labels:
-    app: todo-java
+    app.kubernetes.io/name: todo-java
 spec:
   replicas: 1
   template:

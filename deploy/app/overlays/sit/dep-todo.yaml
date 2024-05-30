@@ -4,7 +4,7 @@ namespace: todo-java-sit
 metadata:
   name: todo-java-app
   labels:
-    app: todo-java
+    app.kubernetes.io/name: todo-java-app-dep
 spec:
   replicas: 1
   template:
