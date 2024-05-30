@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 namespace: todo-java-sit
 metadata:
-  name: todo-java-db
+  name: todo-java-db-dep
   labels:
     app.kubernetes.io/name: todo-java-db-dep
 spec:

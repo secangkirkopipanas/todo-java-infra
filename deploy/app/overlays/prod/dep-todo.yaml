@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 namespace: todo-java-prod
 metadata:
-  name: todo-java-app
+  name: todo-java-app-dep
   labels:
     app.kubernetes.io/name: todo-java-app-dep
 spec:

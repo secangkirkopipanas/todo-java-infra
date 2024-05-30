@@ -7,7 +7,6 @@ resources:
 patches:
   - path: dep-todo-db.yaml
   - path: dep-todo.yaml
-  - path: svc-todo-db.yaml
   - path: secret.yaml
   
 configMapGenerator:
