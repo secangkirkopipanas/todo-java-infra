@@ -20,4 +20,4 @@ configMapGenerator:
   - name: cm-todo-java-db
     literals:
       - timezone="Asia/Singapore"
-      - database-name="todo"
+      - database_name="todo"

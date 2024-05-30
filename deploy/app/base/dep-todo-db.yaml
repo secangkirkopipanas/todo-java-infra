@@ -38,7 +38,7 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: cm-todo-java-db
-                  key: database-name
+                  key: database_name
             - name: POSTGRESQL_USERNAME
               valueFrom:
                 secretKeyRef:
