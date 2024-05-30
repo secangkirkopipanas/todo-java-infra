@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: todo-java-db
   labels:
-    app: todo-java
+    app: todo-java-db
 spec:
   replicas: 1
   template:
