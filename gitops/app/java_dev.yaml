@@ -22,7 +22,7 @@ spec:
       destination:
         name: ''
         namespace: '{{namespace}}'
-        server: '{{env}}'
+        server: '{{url}}'
       source:
         path: 'deploy/app/overlays/{{env}}'
         repoURL: https://github.com/secangkirkopipanas/todo-java-infra/
