@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+namespace: todo-java-prod
 metadata:
   name: todo-java-app
   labels:

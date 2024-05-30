@@ -1,5 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
+namespace: todo-java-sit
 metadata:
   name: todo-java-db
   labels:

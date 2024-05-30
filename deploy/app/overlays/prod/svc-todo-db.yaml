@@ -1,5 +1,6 @@
 apiVersion: v1
 kind: Service
+namespace: todo-java-prod
 metadata:
   name: todo-java-db-svc
   labels:
