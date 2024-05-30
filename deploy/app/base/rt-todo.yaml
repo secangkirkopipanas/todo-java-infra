@@ -4,8 +4,7 @@ metadata:
   annotations:
     openshift.io/host.generated: "true"
   labels:
-    app.kubernetes.io/instance: todo-app
-    app.kubernetes.io/name: todo
+    app.kubernetes.io/name: todo-java-route
   name: todo-rt
 spec:
   port:
@@ -15,6 +14,6 @@ spec:
     termination: edge
   to:
     kind: Service
-    name: todo-svc
+    name: todo-java-svc
     weight: 100
   wildcardPolicy: None
