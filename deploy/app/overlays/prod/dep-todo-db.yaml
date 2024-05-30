@@ -9,8 +9,8 @@ spec:
   template:
     spec:
       containers:
-        - image: bitnami/postgresql:15.4.0-debian-11-r54
-          name: todo-java-db
+        - name: todo-java-db
+          image: bitnami/postgresql:15.4.0-debian-11-r54
           resources:
             requests:
               cpu: 200m

@@ -6,14 +6,14 @@ metadata:
     app.kubernetes.io/instance: todo-java-db
     app.kubernetes.io/name: todo-java-db
     app.openshift.io/runtime: spring
-  name: todo-java-db
+  name: todo-java
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      app.kubernetes.io/name: todo-db
+      name: todo-java-db
   strategy:
     rollingUpdate:
       maxSurge: 25%
