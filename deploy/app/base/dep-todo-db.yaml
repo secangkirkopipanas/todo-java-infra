@@ -8,7 +8,7 @@ spec:
   revisionHistoryLimit: 10
   selector:
     matchLabels:
-      name: todo-java-db
+      app.kubernetes.io/name: todo-java-db
   strategy:
     rollingUpdate:
       maxSurge: 25%
@@ -18,7 +18,10 @@ spec:
     metadata:
       labels:
         app: todo-java-db
+        app.kubernetes.io/name: todo-java-db
     spec:
+      imagePullSecrets:
+        - name: quay
       containers:
         - name: todo-java-db
           image: bitnami/postgresql:15.4.0-debian-11-r54
