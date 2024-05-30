@@ -12,4 +12,5 @@ spec:
     protocol: TCP
     targetPort: psql-port
   selector:
-    app.kubernetes.io/name: todo-java-db
+    matchLabels:
+      name: todo-java-db
