@@ -20,11 +20,13 @@ spec:
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: todo-java-db
-        app.kubernetes.io/part-of: todo-java-app
+        app: todo-java-db
     spec:
       containers:
-        - env:
+        - name: todo-java-db
+          image: bitnami/postgresql:15.4.0-debian-11-r54
+          imagePullPolicy: IfNotPresent
+          env:
             - name: TZ
               valueFrom:
                 configMapKeyRef:
@@ -49,9 +51,6 @@ spec:
               value: Asia/Singapore
             - name: POSTGRESQL_LOG_TIMEZONE
               value: Asia/Singapore
-          image: bitnami/postgresql:15.4.0-debian-11-r54
-          imagePullPolicy: IfNotPresent
-          name: todo-java-db
           ports:
             - containerPort: 5432
               name: psql-port
