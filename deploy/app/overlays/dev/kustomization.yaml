@@ -16,7 +16,6 @@ configMapGenerator:
       - spring_active_profiles="dev"
       - datasource_url="jdbc:h2:mem:todo"
       - datasource_driver_classname="org.h2.Driver"
-      - kafka_bootstrap_servers="my-cluster-kafka-bootstrap.openshift-operators.svc.cluster.local:9092"
       - theme="green-theme"
   - name: cm-todo-java-db
     literals:
