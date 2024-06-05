@@ -17,6 +17,7 @@ configMapGenerator:
       - spring_active_profiles="sit"
       - datasource_url="jdbc:postgresql://todo-java-db-svc:5432/todo-java-sit-db"
       - datasource_driver_classname="org.postgresql.Driver"
+      - kafka_bootstrap_servers="my-cluster-kafka-bootstrap.openshift-operators.svc.cluster.local:9092"
       - theme="green-theme"
   - name: cm-todo-java-db
     literals:

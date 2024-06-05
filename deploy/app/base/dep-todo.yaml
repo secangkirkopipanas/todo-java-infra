@@ -53,6 +53,11 @@ spec:
                 configMapKeyRef:
                   name: cm-todo-java
                   key: datasource_driver_classname
+            - name: KAFKA_BOOTSTRAP_SERVERS
+              valueFrom:
+                configMapKeyRef:
+                  name: cm-todo-java
+                  key: kafka_bootstrap_servers
             - name: DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
