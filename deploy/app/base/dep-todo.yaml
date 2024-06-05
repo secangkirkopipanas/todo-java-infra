@@ -26,7 +26,7 @@ spec:
       containers:
         - name: todo-java-app
           image: quay.io/rh_rh/todo-java:tag_name
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           env:
             - name: TZ
               valueFrom:

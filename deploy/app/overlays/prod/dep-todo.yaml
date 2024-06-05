@@ -10,8 +10,7 @@ spec:
     spec:
       containers:
         - name: todo-java-app
-          image: >-
-            quay.io/rh_rh/todo-java:latest
+          image: quay.io/rh_rh/todo-java:latest
           resources:
             limits:
               cpu: 500m

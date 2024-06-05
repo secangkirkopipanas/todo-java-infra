@@ -10,5 +10,4 @@ spec:
     spec:
       containers:
         - name: todo-java-app
-          imagePullPolicy: Always
           image: quay.io/rh_rh/todo-java:latest
